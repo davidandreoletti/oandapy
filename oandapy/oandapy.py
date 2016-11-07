@@ -276,6 +276,9 @@ class API(EndpointsMixin, object):
             print (str(e))
             content = dict(error=str(e))
 
+        if response.status_code == 204:
+            # No content
+            return None
 
         content = json.loads(content)
 
